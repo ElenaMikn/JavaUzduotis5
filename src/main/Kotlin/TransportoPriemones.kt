@@ -9,7 +9,7 @@ open class  Masina(val gamintojas: String): TransportoPriemone (gamintojas)
 open class  Traukinys(val gamintojas: String): TransportoPriemone (gamintojas)
 {
     var vagonuSkaicius: Int=50;
-    override  fun toString(): String = "Tarkinio gamintojas yra $gamintojas, kurio ilgis yra $vagonuSkaicius vagonu."
+    override  fun toString(): String = "Traukinio gamintojas yra $gamintojas, kurio ilgis yra $vagonuSkaicius vagonu."
 }
 open class  Dviratis(val gamintojas: String): TransportoPriemone (gamintojas)
 {
