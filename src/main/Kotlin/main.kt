@@ -46,15 +46,15 @@ fun main(args: Array<String>) {
     }
     println("${namasUpesAlso.toString()} ")
 
-    //let
+    //let turimam objektui paskaiciuojam bendra plota
+    namasKedru.aukstai=4
     val bendrasPlotas: Double = namasKedru.let {
-        it.aukstai=4
         it.aukstoPlotas=51.0
         it.GetBendrasPlotas()
     }
     println("${namasKedru.toString()} bendras plotas yra $bendrasPlotas")
 
-    //RUN
+    //RUN- sukuriam nauja objekta ir paskaiciuojam bendra plota
     val bendrasPlotas2: Double = run {
         val namas: Namas = Namas()
         namas.aukstai=2
@@ -75,13 +75,13 @@ fun main(args: Array<String>) {
     }
 
     fun Namas.toString(aukstai: Int, aukstoPlotas: Double ):String {
-        return "Namo adresas $gatve $nr, $miestas yra auktu $aukstai po $aukstoPlotas m^2"
+        return "Namo adresas $gatve $nr, $miestas yra aukstu $aukstai po $aukstoPlotas m^2"
     }
     fun Namas.toString(aukstai: Int ):String {
-        return "Namo adresas $gatve $nr, $miestas auktu $aukstai "
+        return "Namo adresas $gatve $nr, $miestas aukstu $aukstai "
     }
     fun Namas.toString(aukstoPlotas: Double ):String {
-        return "Namo adresas $gatve $nr, $miestas aukto plotas $aukstoPlotas m^2 "
+        return "Namo adresas $gatve $nr, $miestas auksto plotas $aukstoPlotas m^2 "
     }
 
     var namasPusu1=Namas("Pusu","Vilnius",1)
@@ -90,12 +90,12 @@ fun main(args: Array<String>) {
 
     var namasPusu2=Namas("Pusu","Vilnius",2)
     namasPusu2.aukstoPlotas=20.0
-    var namasPusu2BendrasPlotas= namasPusu2.GetBendrasPlotas(30)
+    var namasPusu2BendrasPlotas= namasPusu2.GetBendrasPlotas(30)//jei int, tai zino, kad tai aukstu kiekis
     println("${namasPusu2.toString(30)}Bendras plotas Yra $namasPusu2BendrasPlotas")
 
     var namasPusu3=Namas("Pusu","Vilnius",3)
     namasPusu3.aukstai=5
-    var namasPusu3BendrasPlotas= namasPusu3.GetBendrasPlotas(90.3)
+    var namasPusu3BendrasPlotas= namasPusu3.GetBendrasPlotas(90.3)//jei double, tai zino, kad tai auksto plotas
     println("${namasPusu3.toString(90.3)} Bendras plotas Yra $namasPusu3BendrasPlotas")
 
     println( namasPusu3.aukstai)
