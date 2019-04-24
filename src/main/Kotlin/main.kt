@@ -22,12 +22,12 @@ fun main(args: Array<String>) {
 
 
 
-    var namasKedru=Namas("Kedru","Vilnius",-1)
+    var namasKedru=Namas("Kedru","Vilnius",1)
     //n.aukstai=-1 //Exception in thread "main" java.lang.IllegalArgumentException: Auksti negali nebuti
 
     //with
     with(namasKedru) {
-        println("Namo adresas gatve: $gatve nr: $nr metas:  $miestas  ")
+        println("Namo adresas gatve: $gatve nr: $nr miestas:  $miestas  ")
     }
 
     //apply
@@ -61,7 +61,7 @@ fun main(args: Array<String>) {
         namas.aukstoPlotas=70.8
         namas.GetBendrasPlotas()
     }
-    println("${namasKedru.toString()} bendras plotas 2 yra $bendrasPlotas2")
+    println("${namasKedru.toString()} bendras plotas2 yra $bendrasPlotas2")
 
     //Extension funkcijos
     fun Namas.GetBendrasPlotas(aukstai: Int, aukstoPlotas: Double):Double {
@@ -86,17 +86,17 @@ fun main(args: Array<String>) {
 
     var namasPusu1=Namas("Pusu","Vilnius",1)
     var namasPusu1BendrasPlotas= namasPusu1.GetBendrasPlotas(4,65.0)
-    println("${namasPusu1.toString(namasPusu1.aukstai,namasPusu1.aukstoPlotas)} bendras plotas Yra $namasPusu1BendrasPlotas")
+    println("${namasPusu1.toString(4,65.0)} bendras plotas Yra $namasPusu1BendrasPlotas")
 
     var namasPusu2=Namas("Pusu","Vilnius",2)
     namasPusu2.aukstoPlotas=20.0
     var namasPusu2BendrasPlotas= namasPusu2.GetBendrasPlotas(30)
-    println("${namasPusu2.toString(namasPusu2.aukstai)}Bendras plotas Yra $namasPusu2BendrasPlotas")
+    println("${namasPusu2.toString(30)}Bendras plotas Yra $namasPusu2BendrasPlotas")
 
     var namasPusu3=Namas("Pusu","Vilnius",3)
     namasPusu3.aukstai=5
     var namasPusu3BendrasPlotas= namasPusu3.GetBendrasPlotas(90.3)
-    println("${namasPusu3.toString(namasPusu3.aukstoPlotas)} Bendras plotas Yra $namasPusu3BendrasPlotas")
+    println("${namasPusu3.toString(90.3)} Bendras plotas Yra $namasPusu3BendrasPlotas")
 
     println( namasPusu3.aukstai)
     namasPusu3.state= StatusType.diejuAukstu
